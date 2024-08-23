@@ -11,8 +11,7 @@ phases:
   post_build:
     commands:
       - echo "Starting Apache Web Server"
-      - systemctl start httpd
-
+      - apachectl start
 artifacts:
   files:
     - '**/*'
