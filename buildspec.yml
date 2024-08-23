@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - yum update -y
+      - yum install -y httpd php
+  build:
+    commands:
+      - echo "Building the Tic Tac Toe Game"
+  post_build:
+    commands:
+      - echo "Starting Apache Web Server"
+      - systemctl start httpd
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
