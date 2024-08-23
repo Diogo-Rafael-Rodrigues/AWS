@@ -4,14 +4,14 @@ phases:
   install:
     commands:
       - yum update -y
-      #- yum install -y httpd php
+      - yum install -y php
   build:
     commands:
       - echo "Building the Tic Tac Toe Game"
   post_build:
     commands:
-      - echo "Starting Apache Web Server"
-      #- apachectl start
+      - echo "Starting PHP Built-in Web Server"
+      - php -S 0.0.0.0:8080 -t /path/to/your/application &
 artifacts:
   files:
     - '**/*'
